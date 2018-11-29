@@ -1,6 +1,6 @@
-﻿namespace mParticle.LoadGenerator.Models
+﻿namespace mParticle.LoadGenerator.Config
 {
-    public sealed class InputArgs
+    public sealed class AppSettings
     {
         public string ServerUrl { get; set; }
         public string AuthKey { get; set; }
