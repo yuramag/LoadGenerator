@@ -1,4 +1,4 @@
-﻿namespace mParticle.LoadGenerator.Core
+﻿namespace mParticle.LoadGenerator.Extensions
 {
     public sealed class OperationResult
     {

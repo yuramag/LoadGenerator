@@ -2,8 +2,8 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using mParticle.LoadGenerator.Config;
 using mParticle.LoadGenerator.Models;
+using mParticle.LoadGenerator.Services;
 
 namespace mParticle.LoadGenerator.Core
 {
@@ -33,6 +33,21 @@ namespace mParticle.LoadGenerator.Core
         public void Dispose()
         {
             _client.Dispose();
+        }
+    }
+
+    public sealed class TestingEngine
+    {
+        private readonly IServerApi _serverApi;
+
+        public TestingEngine(IServerApi serverApi)
+        {
+            _serverApi = serverApi;
+        }
+
+        public void Execute()
+        {
+
         }
     }
 }

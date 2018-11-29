@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using mParticle.LoadGenerator.Models;
 
-namespace mParticle.LoadGenerator.Core
+namespace mParticle.LoadGenerator.Services
 {
     public interface IServerApi : IDisposable
     {
