@@ -38,7 +38,7 @@ namespace mParticle.LoadGenerator
             serviceCollection.Configure<AppSettings>(configuration.GetSection(nameof(AppSettings)));
 
             serviceCollection.AddTransient<IServerApi, ServerApi>();
-
+            serviceCollection.AddTransient<IExecutionEngine, ExecutionEngine>();
             serviceCollection.AddTransient<App>();
         }
     }

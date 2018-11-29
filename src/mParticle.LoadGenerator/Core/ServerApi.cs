@@ -4,22 +4,23 @@ using System.Threading;
 using System.Threading.Tasks;
 using mParticle.LoadGenerator.Models;
 using mParticle.LoadGenerator.Services;
+using Microsoft.Extensions.Options;
 
 namespace mParticle.LoadGenerator.Core
 {
     public sealed class ServerApi : IServerApi
     {
+        private readonly AppSettings _settings;
         private readonly HttpClient _client;
 
-        public ServerApi(AppSettings settings)
+        public ServerApi(IOptions<AppSettings> settings)
         {
-            if (settings == null)
-                throw new ArgumentNullException(nameof(settings));
+            _settings = settings.Value;
 
             _client = new HttpClient
             {
-                BaseAddress = new Uri(settings.ServerUrl),
-                DefaultRequestHeaders = {{"X-Api-Key", settings.AuthKey}}
+                BaseAddress = new Uri(_settings.ServerUrl),
+                DefaultRequestHeaders = {{"X-Api-Key", _settings.AuthKey}}
             };
         }
 
@@ -33,21 +34,6 @@ namespace mParticle.LoadGenerator.Core
         public void Dispose()
         {
             _client.Dispose();
-        }
-    }
-
-    public sealed class TestingEngine
-    {
-        private readonly IServerApi _serverApi;
-
-        public TestingEngine(IServerApi serverApi)
-        {
-            _serverApi = serverApi;
-        }
-
-        public void Execute()
-        {
-
         }
     }
 }

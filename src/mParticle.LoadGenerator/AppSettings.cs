@@ -6,6 +6,6 @@
         public string AppName { get; set; }
         public string ServerUrl { get; set; }
         public string AuthKey { get; set; }
-        public string TargetRps { get; set; }
+        public int TargetRps { get; set; }
     }
 }
