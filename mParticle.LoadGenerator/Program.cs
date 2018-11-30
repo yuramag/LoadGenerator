@@ -24,7 +24,7 @@ namespace mParticle.LoadGenerator
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
+                //.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false)
                 .AddEnvironmentVariables()
                 .Build();

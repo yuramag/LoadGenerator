@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\mParticle.LoadGenerator\mParticle.LoadGenerator.csproj" />
+    <ProjectReference Include="..\mParticle.LoadGenerator\mParticle.LoadGenerator.csproj" />
   </ItemGroup>
 
 </Project>
