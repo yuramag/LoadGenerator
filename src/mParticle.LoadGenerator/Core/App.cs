@@ -5,7 +5,6 @@ using mParticle.LoadGenerator.Extensions;
 using mParticle.LoadGenerator.Models;
 using mParticle.LoadGenerator.Services;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 
 namespace mParticle.LoadGenerator.Core
 {
