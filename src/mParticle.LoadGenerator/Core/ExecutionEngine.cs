@@ -92,7 +92,10 @@ namespace mParticle.LoadGenerator.Core
                 metrics.TimeOffset = -stopwatch.Elapsed;
             }
 
-            metrics.Errors = tasks.Where(x => !x.Result.Succeeded).Select(x => x.Result.Error).ToList();
+            metrics.Errors = tasks
+                .Where(x => !x.Result.Succeeded)
+                .Select(x => x.Result.Error)
+                .ToList();
 
             return metrics;
         }
