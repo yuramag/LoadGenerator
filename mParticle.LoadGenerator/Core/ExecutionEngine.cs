@@ -43,9 +43,9 @@ namespace mParticle.LoadGenerator.Core
             {
                 while (true)
                 {
-                    cancellationToken.ThrowIfCancellationRequested();
                     var metrics = await RunCycleAsync(stopwatch, requestsSent, cancellationToken);
                     requestsSent += _settings.TargetRps;
+                    cancellationToken.ThrowIfCancellationRequested();
                     output.OnNext(metrics);
                 }
             }
